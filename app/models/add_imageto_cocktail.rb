@@ -1,0 +1,2 @@
+class AddImagetoCocktail < ApplicationRecord
+end
