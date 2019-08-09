@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Ingredient.destroy_all
-require 'JSON'
-require 'open-uri'
+# require 'JSON'
+# require 'open-uri'
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 json = open(url).read
