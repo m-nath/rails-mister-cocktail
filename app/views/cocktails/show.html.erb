@@ -2,17 +2,20 @@
   <h1><%= @cocktail.name %></h1>
 </div>
 
-
 <div class="card-product">
+  <!-- <div> -->
   <% if @cocktail.photo.present? %>
-    <%= cl_image_tag @cocktail.photo, crop: :fill, class: "card-img-top" %>
+    <%= cl_image_tag @cocktail.photo, crop: :fill, class: "card-img-top show-image" %>
   <% else %>
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2786&q=80" alt="Card image cap">
+    <img class="card-img-top show-image" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2786&q=80" alt="Card image cap">
   <% end %>
-    <h3>Ingredients</h3>
+  <!-- </div> -->
+    <div class="subcard">
+    <h2>Ingredients</h2>
+    <br>
     <% @cocktail.doses.each do |dose| %>
     <ul>
-      <li><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to "Delete", dose_path(dose), method: :delete %></li>
+      <li><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i><% end %></li>
     </ul>
     <% end %>
   </div>
