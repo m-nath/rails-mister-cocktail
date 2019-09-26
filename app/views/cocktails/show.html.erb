@@ -1,7 +1,7 @@
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('<%= cl_image_path @cocktail.banner %>');">
   <h1><%= @cocktail.name %></h1>
+  <p id="banner-description"><%= @cocktail.description %></p>
 </div>
-
 <div class="card-product">
   <!-- <div> -->
   <% if @cocktail.photo.present? %>
@@ -10,22 +10,21 @@
     <img class="card-img-top show-image" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2786&q=80" alt="Card image cap">
   <% end %>
   <!-- </div> -->
-    <div class="subcard">
+  <div class="subcard">
     <h2>Ingredients</h2>
     <br>
-    <% @cocktail.doses.each do |dose| %>
-    <ul>
-      <li><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i><% end %></li>
-    </ul>
+    <% if @cocktail.doses.present? %>
+      <% @cocktail.doses.each do |dose| %>
+        <ul>
+          <li><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %><i class="fas fa-trash-alt"></i><% end %></li>
+        </ul>
+      <% end %>
+    <% else %>
+      <h6>Be the first to add the ingredients</h6>
     <% end %>
   </div>
 </div>
-
-
-<br>
-<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
-
-<br>
-<%= link_to 'Back', cocktails_path  %>
-
-
+<div class="m-2 ml-3">
+  <%= render 'doses/new' %>
+  <%= link_to 'Back', root_path, { class: "btn btn-secondary"} %>
+</div>

@@ -1,6 +1,9 @@
 <title>Mister Cocktail</title>
 <div class="banner">
   <h1 class="main">Mister Cocktail</h1>
+  <div class="int-btn">
+    <%= render 'cocktails/form' %>
+  </div>
 </div>
 <div class="container">
   <div class="grid-container">
@@ -12,15 +15,9 @@
           <% else %>
             <img class="card-img-top" src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2786&q=80" alt="Card image cap">
           <% end %>
-          <h5 class="card-title pl-6"><%= link_to cocktail.name, cocktail_path(cocktail), { :class=>"stretched-link" } %></h5>
-          <%#= cocktail.name
-          <!--         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-        </div>
-        <div class="card-footer">
-          <small class="text-muted stretched-link"><%= link_to "More info", cocktail_path(cocktail), { :class=>"stretched-link" }  %>
+          <h5 class="card-title text-center"><%= link_to cocktail.name, cocktail_path(cocktail), { :class=>"stretched-link" } %></h5>
         </div>
       </div>
     <% end %>
   </div>
   <br>
-  <%= link_to "Create Cocktail", new_cocktail_path %>

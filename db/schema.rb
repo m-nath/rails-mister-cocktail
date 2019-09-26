@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2019_09_26_080313) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.string "ingredient"
-    t.string "dose"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

@@ -17,9 +17,9 @@
   height: 25vh;
 }
 .card-product {
-  margin: 0 30px;
+  margin: 0 10px;
   overflow: hidden;
-  height: 300px;
+  height: 240px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -34,7 +34,7 @@
 
 .card-product img {
   height: 100%;
-  width: 300px;
+  width: 22%;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -56,3 +56,18 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-product img {
+    width: 38%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 707px) {
+  .card-product img {
+    width: 33%;
+  }
+}
+
