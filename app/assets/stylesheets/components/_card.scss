@@ -1,0 +1,58 @@
+.card-body {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  margin-top: 10px;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-img-top  {
+  object-fit: cover;
+  width: 100%;
+  height: 25vh;
+}
+.card-product {
+  margin: 0 30px;
+  overflow: hidden;
+  height: 300px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+
+.subcard {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
